@@ -1,0 +1,2 @@
+[17-Feb-2023 07:41:40 UTC] PHP Warning:  require(/home/churchbuild/public_html/public/../../my-project/bootstrap/autoload.php): failed to open stream: No such file or directory in /home/churchbuild/public_html/public/index.php on line 49
+[17-Feb-2023 07:41:40 UTC] PHP Fatal error:  require(): Failed opening required '/home/churchbuild/public_html/public/../../my-project/bootstrap/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/churchbuild/public_html/public/index.php on line 49

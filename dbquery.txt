@@ -1,0 +1,36 @@
+07-08-2023
+table : tbl_vehicles
+add colum rfid_number
+ALTER TABLE `tbl_vehicles` ADD `rfid_number` VARCHAR(100) NULL DEFAULT NULL AFTER `engine_number`;
+
+table : tbl_modules
+INSERT INTO `tbl_modules` (`id`, `parent_id`, `module_name`, `module_url`, `module_icon`, `order_id`, `controller_name`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES (NULL, '0', 'Location Management', 'location/list', 'fa fa-map-marker', '5', NULL, '1', NULL, NULL, NULL);
+
+table tbl_users
+add colum image
+ALTER TABLE `tbl_users` ADD `image` VARCHAR(191) NULL DEFAULT NULL AFTER `otp`;
+
+table tbl_modules
+INSERT INTO `tbl_modules` (`id`, `parent_id`, `module_name`, `module_url`, `module_icon`, `order_id`, `controller_name`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES (NULL, '0', 'Setting', '#', 'fa fa-cog', '6', NULL, '1', NULL, NULL, NULL);
+INSERT INTO `tbl_modules` (`id`, `parent_id`, `module_name`, `module_url`, `module_icon`, `order_id`, `controller_name`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES (NULL, '8', 'Android version', 'setting/version', 'fa fa-cog', '6', NULL, '1', NULL, NULL, NULL);
+UPDATE `tbl_modules` SET `controller_name` = 'SettingController' WHERE `tbl_modules`.`id` = 9;
+UPDATE `tbl_modules` SET `controller_name` = 'LocationController' WHERE `tbl_modules`.`id` = 7;
+UPDATE `tbl_modules` SET `controller_name` = 'ClientController' WHERE `tbl_modules`.`id` = 6;
+UPDATE `tbl_modules` SET `controller_name` = 'VehicleController' WHERE `tbl_modules`.`id` = 5;
+UPDATE `tbl_modules` SET `controller_name` = 'VendorController' WHERE `tbl_modules`.`id` = 4;
+
+INSERT INTO `tbl_settings` (`id`, `version`, `medium`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES (NULL, '1.0', 'App', '1', NULL, NULL, NULL);
+
+ALTER TABLE `tbl_vehicles` CHANGE `transporter_name` `transporter_id` INT(11) NULL DEFAULT NULL COMMENT 'fk: transporters', CHANGE `client_name` `client_id` INT(11) NULL DEFAULT NULL COMMENT 'fk: clients';
+
+07-10-2023
+INSERT INTO `tbl_modules` (`id`, `parent_id`, `module_name`, `module_url`, `module_icon`, `order_id`, `controller_name`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES (NULL, '5', 'Manage Vehicle', 'vehicle/list', 'fa fa-bus', '4', 'VehicleController', '1', NULL, NULL, NULL);
+INSERT INTO `tbl_modules` (`id`, `parent_id`, `module_name`, `module_url`, `module_icon`, `order_id`, `controller_name`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES (NULL, '5', 'Manage Vehicle Notification', 'vehicle-notification/list', 'fa fa-bus', '4', 'VehicleNotificationController', '1', NULL, NULL, NULL);
+
+08-10-2023
+INSERT INTO `tbl_modules` (`id`, `parent_id`, `module_name`, `module_url`, `module_icon`, `order_id`, `controller_name`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES (NULL, '0', 'ChallanManagement', 'challan/list', 'fa fa-map-marker', '5', 'ChallanController', '1', NULL, NULL, NULL);
+
+INSERT INTO `tbl_modules` (`id`, `parent_id`, `module_name`, `module_url`, `module_icon`, `order_id`, `controller_name`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES (NULL, '0', 'DieselManagement', 'diesel/list', 'fa fa-map-marker', '5', 'DieselController', '1', NULL, NULL, NULL);
+
+30-08-2023
+INSERT INTO `tbl_modules` (`id`, `parent_id`, `module_name`, `module_url`, `module_icon`, `order_id`, `controller_name`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES (NULL, '8', 'Master Setting', 'setting/master-setting', 'fa fa-cog', '0', 'SettingController', '1', NULL, NULL, NULL);
